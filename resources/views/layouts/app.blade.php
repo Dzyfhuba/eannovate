@@ -23,6 +23,8 @@
     <link href="/DataTables/datatables.min.css" rel="stylesheet">
 
     <script src="/DataTables/datatables.min.js"></script>
+
+    @yield('style')
 </head>
 
 <body>

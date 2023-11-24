@@ -29,12 +29,12 @@ class StudentController extends Controller
     }
     public function create()
     {
-        return view('students.form');
+        return view('students.switch');
     }
     public function edit($id)
     {
         $student = Student::find($id);
-        return view('students.form', [
+        return view('students.switch', [
             'student' => $student
         ]);
     }
