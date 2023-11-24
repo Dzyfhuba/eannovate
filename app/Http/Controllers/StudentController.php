@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\Student;
+use App\Model\StudentClass;
 use DataTables\Editor;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Uuid;
@@ -97,5 +98,43 @@ class StudentController extends Controller
         return response([
             'status' => 'success'
         ]);
+    }
+
+    public function assignClass(Request $request)
+    {
+        try {
+            $request->validate([
+                'student_id' => 'required|integer|exists:students,id',
+                'class_id' => 'required|integer|exists:classes,id'
+            ]);
+            $exists = StudentClass::where('student_id', $request->student_id)
+            ->where('class_id', $request->class_id)
+            ->exists();
+
+            if ($exists) {
+                return response([
+                    'status' => 'error',
+                    'message' => 'Class already assigned.'
+                ], 400);
+            }
+
+            StudentClass::create([
+                'student_id' => $request->student_id,
+                'class_id' => $request->class_id,
+                'created_by' => auth()->user()->name
+            ]);
+
+
+            return response([
+                'status' => 'success',
+                'exists' => $exists
+            ]);
+        } catch (\Exception $e) {
+            //throw $th;
+            return response([
+                'status' => 'error',
+                'message' => $e->getMessage()
+            ], 500);
+        }
     }
 }

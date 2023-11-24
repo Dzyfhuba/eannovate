@@ -26,6 +26,8 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/update/{id}', [StudentController::class, 'update'])->name('student.update');
     Route::delete('/delete/{id}', [StudentController::class, 'destroy'])->name('student.destroy');
 
+    Route::post('/student/assign', [StudentController::class, 'assignClass'])->name('student.assign');
+
     // rooms
     Route::get('/room', [RoomController::class, 'index'])->name('room.index');
     Route::get('/room/json', [RoomController::class, 'json'])->name('room.json');

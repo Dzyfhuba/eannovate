@@ -14,9 +14,7 @@ class RoomController extends Controller
 
     public function json()
     {
-        $rooms = Room::orderBy('updated_at', 'desc')
-            ->select(["*", 'id as DT_RowID'])->get();
-        // dd($rooms);
+        $rooms = Room::orderBy('updated_at', 'desc')->get();
         return response()->json([
             'data' => $rooms
         ]);
