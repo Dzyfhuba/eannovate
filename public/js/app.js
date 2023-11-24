@@ -54930,9 +54930,10 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-new datatables_net_dt__WEBPACK_IMPORTED_MODULE_0__["default"]('#myTable', {
-  select: 'single'
-});
+window.DataTable = datatables_net_dt__WEBPACK_IMPORTED_MODULE_0__["default"];
+// new DataTable('#myTable', {
+//     select: 'single'
+// });
 
 /***/ }),
 

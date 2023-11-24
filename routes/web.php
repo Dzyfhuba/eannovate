@@ -17,9 +17,11 @@ Auth::routes();
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/', [StudentController::class, 'index'])->name('student.index');
+    Route::get('/json', [StudentController::class, 'json'])->name('student.json');
     Route::get('/create', [StudentController::class, 'create'])->name('student.create');
     Route::get('/edit', [StudentController::class, 'edit'])->name('student.edit');
     Route::post('/store', [StudentController::class, 'store'])->name('student.store');
+    Route::delete('/delete/{id}', [StudentController::class, 'destroy'])->name('student.destroy');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
