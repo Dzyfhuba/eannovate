@@ -20,9 +20,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <link href="DataTables/datatables.min.css" rel="stylesheet">
+    <link href="/DataTables/datatables.min.css" rel="stylesheet">
 
-    <script src="DataTables/datatables.min.js"></script>
+    <script src="/DataTables/datatables.min.js"></script>
 </head>
 
 <body>
@@ -30,7 +30,8 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{-- {{ config('app.name', 'Laravel') }} --}}
+                    <img src="/281F641B-0CFF-4609-A1A1-134F3075D303" alt="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

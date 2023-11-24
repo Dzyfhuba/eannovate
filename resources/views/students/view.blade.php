@@ -19,6 +19,7 @@
                     <th>Updated By</th>
                     <th>Created At</th>
                     <th>Updated At</th>
+                    <th>Edit</th>
                 </tr>
             </thead>
             <tbody>
@@ -65,6 +66,10 @@
                 {
                     data: 'updated_at'
                 },
+                {
+                    data: 'id',
+                    render:(data) => `<a href='/edit/${data}' class="btn btn-warning">Edit</a>`
+                }
             ]
         });
 

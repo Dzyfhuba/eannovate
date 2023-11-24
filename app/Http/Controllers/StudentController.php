@@ -31,14 +31,12 @@ class StudentController extends Controller
     {
         return view('students.form');
     }
-    public function edit()
+    public function edit($id)
     {
-        return view('students.form');
-    }
-
-    public function join()
-    {
-        Editor::inst(\DB::class);
+        $student = Student::find($id);
+        return view('students.form', [
+            'student' => $student
+        ]);
     }
 
     public function store(Request $request)
@@ -59,6 +57,34 @@ class StudentController extends Controller
             'created_by' => auth()->user()->name,
             'updated_by' => auth()->user()->name
         ]));
+
+        return redirect()->route('student.index');
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'username' => 'required|string|max:64',
+            'email' => 'required|email',
+            'age' => 'required|integer|min:0',
+            'phone_number' => 'required|min:8|max:16',
+            'picture' => 'max:2048'
+        ]);
+
+        $filename = '';
+        if ($request->hasFile('picture')) {
+            $filename = Uuid::uuid4();
+            $request->file('picture')->move(public_path('pictures'), $filename);
+        }
+
+        $student = Student::find($id);
+        $student->username = $request->username;
+        $student->email = $request->email;
+        $student->age = $request->age;
+        $student->phone_number = $request->phone_number;
+        $student->picture = $filename;
+        $student->updated_by = auth()->user()->name;
+        $student->save();
 
         return redirect()->route('student.index');
     }
