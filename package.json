@@ -23,6 +23,7 @@
         "vue-template-compiler": "^2.7.15"
     },
     "dependencies": {
-        "datatables.net-dt": "^1.13.8"
+        "datatables.net-dt": "^1.13.8",
+        "datatables.net-select-dt": "^1.7.0"
     }
 }

@@ -25,8 +25,16 @@ class StudentController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate([
+            'username' => 'required|string|max:64',
+            'email' => 'required|email',
+            'age' => 'required|integer|min:0',
+            'phone_number' => 'required|min:8|max:16',
+            'picture' => 'required|max:2048'
+        ]);
+
         $filename = Uuid::uuid4();
-        $request->file('picture')->move(storage_path('picture'), $filename);
+        $request->file('picture')->move(public_path('pictures'), $filename);
 
         Student::create(array_merge($request->all(), [
             'picture' => $filename,

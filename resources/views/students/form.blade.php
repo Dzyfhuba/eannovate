@@ -2,6 +2,15 @@
 
 @section('content')
     <div class="container">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="{{ route('student.store') }}" method="POST" enctype="multipart/form-data">
             @csrf()
             <div class="text-right">
@@ -9,7 +18,8 @@
             </div>
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" name="username" id="username" placeholder="Username..." required>
+                <input type="text" class="form-control" name="username" id="username" placeholder="Username..."
+                    required>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
@@ -21,11 +31,13 @@
             </div>
             <div class="form-group">
                 <label for="phone_number">Phone Number</label>
-                <input type="tel" class="form-control" name="phone_number" id="phone_number" placeholder="Phone number..." required>
+                <input type="tel" class="form-control" name="phone_number" id="phone_number"
+                    placeholder="Phone number..." required>
             </div>
             <div class="form-group">
                 <label for="picture">Picture</label>
-                <input type="file" class="form-control-file" name="picture" id="picture" placeholder="Picture..." required>
+                <input type="file" class="form-control-file" name="picture" id="picture" placeholder="Picture..."
+                    required>
             </div>
         </form>
     </div>

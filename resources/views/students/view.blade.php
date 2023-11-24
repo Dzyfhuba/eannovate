@@ -26,7 +26,7 @@
                 <td>{{$s->email}}</td>
                 <td>{{$s->age}}</td>
                 <td>{{$s->phone_number}}</td>
-                <td>{{$s->picture}}</td>
+                <td><img src="/pictures/{{$s->picture}}" height="100" width="100" /></td>
                 <td>{{$s->created_by}}</td>
                 <td>{{$s->updated_by}}</td>
                 <td>{{$s->created_at}}</td>
@@ -35,6 +35,5 @@
         @endforeach
     </tbody>
   </table>
-  {{-- {{$students->links()}} --}}
 </div>
 @endsection
