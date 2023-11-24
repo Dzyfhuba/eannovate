@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
 
-        \App\Admin::create([
+        \App\User::create([
             'name' => 'admin',
             'email' => 'admin@mail.com',
             'password' => bcrypt('12345678')

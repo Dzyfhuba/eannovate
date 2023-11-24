@@ -7,6 +7,7 @@ use App\Model\StudentClass;
 use DataTables\Editor;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Uuid;
+use Illuminate\Support\Str;
 
 class StudentController extends Controller
 {
@@ -14,7 +15,7 @@ class StudentController extends Controller
     {
         $students = Student::orderBy('updated_at', 'desc')
             ->select(["*", 'id as DT_RowID'])->get();
-        // dd($students);
+        // dd(Str::random(80));
         return view('students.view', [
             'students' => $students
         ]);

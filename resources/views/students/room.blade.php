@@ -71,6 +71,7 @@
             .then(data => {
                 if (data.status === 'success') {
                     alert('Class assigned successfully.')
+                    table.ajax.reload()
                 } else {
                     alert('Class already assigned.')
                     console.error(JSON.stringify(data))
