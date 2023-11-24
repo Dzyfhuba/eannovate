@@ -100,6 +100,19 @@ class StudentController extends Controller
         ]);
     }
 
+    public function room($id)
+    {
+        $data = StudentClass::query()
+            ->join('classes', 'classes.id', '=', 'student_classes.class_id')
+            ->where('student_classes.student_id', $id)
+            ->select(['classes.name', 'classes.major', 'classes.created_by', 'classes.created_at'])
+            ->get();
+
+        return response()->json([
+            'data' => $data
+        ]);
+    }
+
     public function assignClass(Request $request)
     {
         try {

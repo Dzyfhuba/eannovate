@@ -26,6 +26,7 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/update/{id}', [StudentController::class, 'update'])->name('student.update');
     Route::delete('/delete/{id}', [StudentController::class, 'destroy'])->name('student.destroy');
 
+    Route::get('/student/room/{id}', [StudentController::class, 'room'])->name('student.room');
     Route::post('/student/assign', [StudentController::class, 'assignClass'])->name('student.assign');
 
     // rooms

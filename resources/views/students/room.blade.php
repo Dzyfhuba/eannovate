@@ -5,9 +5,36 @@
         </select>
         <button type="submit" class="btn btn-primary w-100">Assign</button>
     </form>
+
+    <table id="example">
+        <thead>
+            <th>Class</th>
+            <th>Major</th>
+            <th>Created By</th>
+            <th>Created At</th>
+        </thead>
+    </table>
 </div>
 
+
 <script>
+    const table = new DataTable('#example', {
+            ajax: '/student/room/{{ $student->id }}',
+            columns: [{
+                    data: 'name',
+                },
+                {
+                    data: 'major',
+                },
+                {
+                    data: 'created_by',
+                },
+                {
+                    data: 'created_at',
+                }
+            ]
+        });
+
     const classSelect = document.querySelector('#class')
 
     // fetch from /room/json
@@ -27,7 +54,8 @@
         e.preventDefault()
         const classId = classSelect.value
         console.log(classId)
-        const studentId = {{ $student->id }}
+        const studentId = {{ $student-> id
+    }}
         fetch('/student/assign', {
             method: 'POST',
             headers: {
