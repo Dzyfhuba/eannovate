@@ -27,6 +27,7 @@
 <!-- this page use to with betweet room and form -->
 @section('content')
 <div class="container">
+    <h1>Student Form</h1>
     <div class="tab">
         <button class="btn" id="form-key">Form</button>
         <button class="btn" id="room-key">Class</button>

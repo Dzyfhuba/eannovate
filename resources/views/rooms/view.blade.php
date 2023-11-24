@@ -2,11 +2,12 @@
 
 @section('content')
 <div class="container">
+    <h1>Classes</h1>
     @if(session('success'))
     <div class="alert alert-success">{{session('success')}}</div>
     @endif
     <div class="text-right">
-        <a href="{{route('room.create')}}" class="btn btn-primary">New Room</a>
+        <a href="{{route('room.create')}}" class="btn btn-primary">New Class</a>
     </div>
     <button id="delete" onclick="OnDelete()" class="btn btn-danger">delete</button>
 
