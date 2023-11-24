@@ -58,7 +58,7 @@ class StudentController extends Controller
             'updated_by' => auth()->user()->name
         ]));
 
-        return redirect()->route('student.index');
+        return redirect()->route('student.index')->with('success', 'Student created successfully.');
     }
 
     public function update(Request $request, $id)
@@ -86,7 +86,7 @@ class StudentController extends Controller
         $student->updated_by = auth()->user()->name;
         $student->save();
 
-        return redirect()->route('student.index');
+        return redirect()->route('student.index')->with('success', 'Student updated successfully.');
     }
 
     public function destroy($id)

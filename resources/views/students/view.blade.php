@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="container-fluid">
+        @if (session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
         <div class="text-right mb-3">
             <a href="{{ route('student.create') }}" class="btn btn-primary">New Student</a>
         </div>
@@ -84,7 +87,7 @@
                 selected: true
             }).ids().toArray()
 
-            if (!ids.lenght) {
+            if (ids.lenght === 0) {
                 alert('select at least one.')
                 return
             }
