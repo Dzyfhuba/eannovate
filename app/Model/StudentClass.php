@@ -22,6 +22,10 @@ class StudentClass extends Model
     }
     public function class()
     {
-        return $this->belongsTo('App\Model\Class')->withDefault();
+        return $this->belongsTo('App\Model\Room')->withDefault();
+    }
+    public function classes()
+    {
+        return $this->hasMany('App\Model\Room');
     }
 }
