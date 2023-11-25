@@ -11,6 +11,8 @@ class StudentController extends Controller
     public function index(Request $request)
     {
         try {
+            $classId = $request->query('class');
+
             $students = Student::query()
                 ->select([
                     'id',
@@ -19,6 +21,13 @@ class StudentController extends Controller
                     'phone_number',
                     'picture'
                 ])
+                ->where(function ($query) use ($classId) {
+                    if ($classId) {
+                        $query->whereHas('class', function ($query) use ($classId) {
+                            $query->where('classes.id', $classId);
+                        });
+                    }
+                })
                 ->get();
             $students->load([
                 'class' => function ($query) {
