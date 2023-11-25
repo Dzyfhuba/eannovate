@@ -9,15 +9,18 @@
         overflow: hidden;
         margin-bottom: 12px;
     }
+
     .tab button {
         width: 100%;
         background-color: #b5b5b5;
         border-radius: 0px;
         font-weight: 700
     }
+
     .tab button:hover {
         text-decoration: underline;
     }
+
     .tab button:active {
         box-shadow: inset 0px 0px 12px 4px rgba(0, 0, 0, 0.2)
     }
@@ -29,14 +32,19 @@
 <div class="container">
     <h1>Student Form</h1>
     <div class="tab">
+        @if (isset($student))
         <button class="btn" id="form-key">Form</button>
         <button class="btn" id="room-key">Class</button>
+        @endif
     </div>
     <div id='form'>
         @include('students.form')
     </div>
+
     <div id='room' class="d-none">
+        @if (isset($student))
         @include('students.room')
+        @endif
     </div>
 </div>
 @endsection

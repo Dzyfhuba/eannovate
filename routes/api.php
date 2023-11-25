@@ -23,6 +23,7 @@ Route::middleware(['api.bearer'])->get('/user', function (Request $request) {
 
 Route::middleware(['api.bearer'])->group(function () {
     Route::get('/mobile/student', [StudentController::class, 'index']);
+    Route::post('/mobile/student/insert', [StudentController::class, 'store']);
 });
 
 Route::post('/login', function (Request $request) {
