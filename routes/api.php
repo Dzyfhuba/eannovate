@@ -30,12 +30,15 @@ Route::post('/login', function (Request $request) {
         $user->save();
 
         return response([
-            'message' => 'success',
-            'user' => $user,
-        ]);
+            'id' => $user->id,
+            'name' => $user->name,
+            'email' => $user->email,
+            'authorization' => $user->api_token,
+        ], 200);
     }
 
     return response([
-        'message' => 'failed'
+        'status' => 401,
+        'message' => 'Unauthorized',
     ]);
 });
