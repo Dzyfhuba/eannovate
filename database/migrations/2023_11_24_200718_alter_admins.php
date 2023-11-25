@@ -14,7 +14,7 @@ class AlterAdmins extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('token')->nullable()->unique()->after('password')->default(null);
+            $table->string('api_token')->nullable()->unique()->after('password')->default(null);
         });
     }
 
@@ -26,7 +26,7 @@ class AlterAdmins extends Migration
     public function down()
     {
         Schema::table('admins', function (Blueprint $table) {
-            $table->dropColumn('token');
+            $table->dropColumn('api_token');
         });
     }
 }

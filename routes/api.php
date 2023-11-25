@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Http\Request;
 
 /*
@@ -13,6 +14,28 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware(['api.bearer'])->get('/user', function (Request $request) {
+    return response([
+        'hello' => 'user'
+    ]);
+});
+
+Route::post('/login', function (Request $request) {
+    $credentials = $request->only('email', 'password');
+
+    if (Auth::attempt($credentials)) {
+
+        $user = User::find(auth()->user()->id);
+        $user->api_token = Str::random(80);
+        $user->save();
+
+        return response([
+            'message' => 'success',
+            'user' => $user,
+        ]);
+    }
+
+    return response([
+        'message' => 'failed'
+    ]);
 });
