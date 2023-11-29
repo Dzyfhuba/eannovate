@@ -28,6 +28,19 @@ Route::middleware(['api.bearer'])->group(function () {
 
 Route::post('/login', function (Request $request) {
     try {
+        $validated = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        if ($validated->fails()) {
+            return response([
+                'status' => 400,
+                'message' => 'Bad Request',
+                'errors' => $validated->getMessageBag(),
+            ], 400);
+        }
+
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
@@ -52,6 +65,13 @@ Route::post('/login', function (Request $request) {
         return response([
             'status' => 500,
             'message' => 'Internal Server Error',
+            'e' => $e->getMessage(),
         ], 500);
     }
+});
+
+Route::get('/', function() {
+    return response([
+        'hello' => 'world'
+    ]);
 });

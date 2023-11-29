@@ -1,0 +1,567 @@
+{
+	"info": {
+		"_postman_id": "f20d5d4e-95c4-4119-9191-7c23c8cf949c",
+		"name": "EAnnovate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19273875"
+	},
+	"item": [
+		{
+			"name": "student",
+			"item": [
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/mobile/student",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"mobile",
+								"student"
+							],
+							"query": [
+								{
+									"key": "class",
+									"value": "7",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "with classId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/mobile/student?class=7",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"mobile",
+										"student"
+									],
+									"query": [
+										{
+											"key": "class",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Nov 2023 00:58:16 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Nov 2023 00:58:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.33-14+ubuntu22.04.1+deb.sury.org+1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"data\": [\n        {\n            \"id\": 14,\n            \"username\": \"agung\",\n            \"age\": 20,\n            \"phone_number\": \"0812312414124\",\n            \"picture\": \"85b5c35f-7f51-404c-b061-afcc03762f38\",\n            \"class\": [\n                {\n                    \"id\": 8,\n                    \"name\": \"Circuit\",\n                    \"major\": \"Electric\"\n                },\n                {\n                    \"id\": 9,\n                    \"name\": \"Robotics\",\n                    \"major\": \"Electric\"\n                },\n                {\n                    \"id\": 7,\n                    \"name\": \"Mobile Application\",\n                    \"major\": \"Informatics\"\n                },\n                {\n                    \"id\": 6,\n                    \"name\": \"Web Programming\",\n                    \"major\": \"Informatics\"\n                }\n            ]\n        }\n    ]\n}"
+						},
+						{
+							"name": "all",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/mobile/student",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"mobile",
+										"student"
+									],
+									"query": [
+										{
+											"key": "class",
+											"value": "7",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Nov 2023 00:59:02 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Nov 2023 00:59:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.33-14+ubuntu22.04.1+deb.sury.org+1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"data\": [\n        {\n            \"id\": 10,\n            \"username\": \"Fahmi\",\n            \"age\": 22,\n            \"phone_number\": \"086542137233\",\n            \"picture\": \"c3c000d2-72de-4380-96d1-06eb1f3a66d6\",\n            \"class\": []\n        },\n        {\n            \"id\": 11,\n            \"username\": \"Rizky\",\n            \"age\": 20,\n            \"phone_number\": \"0871236271323\",\n            \"picture\": \"5b5091e6-c052-449f-aaea-c4e256e0c737\",\n            \"class\": []\n        },\n        {\n            \"id\": 12,\n            \"username\": \"didi\",\n            \"age\": 25,\n            \"phone_number\": \"081236123232\",\n            \"picture\": \"59aecc12-95c2-4b9a-a118-e50e87022a6b\",\n            \"class\": [\n                {\n                    \"id\": 11,\n                    \"name\": \"Kelas B\",\n                    \"major\": \"Arsitektur Komputer\"\n                },\n                {\n                    \"id\": 8,\n                    \"name\": \"Circuit\",\n                    \"major\": \"Electric\"\n                }\n            ]\n        },\n        {\n            \"id\": 13,\n            \"username\": \"rahmat\",\n            \"age\": 20,\n            \"phone_number\": \"086125121212\",\n            \"picture\": \"61e7e6f3-39c8-4e47-afe6-487f4587cce7\",\n            \"class\": []\n        },\n        {\n            \"id\": 14,\n            \"username\": \"agung\",\n            \"age\": 20,\n            \"phone_number\": \"0812312414124\",\n            \"picture\": \"85b5c35f-7f51-404c-b061-afcc03762f38\",\n            \"class\": [\n                {\n                    \"id\": 8,\n                    \"name\": \"Circuit\",\n                    \"major\": \"Electric\"\n                },\n                {\n                    \"id\": 9,\n                    \"name\": \"Robotics\",\n                    \"major\": \"Electric\"\n                },\n                {\n                    \"id\": 7,\n                    \"name\": \"Mobile Application\",\n                    \"major\": \"Informatics\"\n                },\n                {\n                    \"id\": 6,\n                    \"name\": \"Web Programming\",\n                    \"major\": \"Informatics\"\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "hafidz1",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "22",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "0123123123",
+									"type": "text"
+								},
+								{
+									"key": "class_id[]",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "class_id[]",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "hafidz10@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "picture",
+									"type": "file",
+									"src": "/home/ubaid/Pictures/1.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/mobile/student/insert",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"mobile",
+								"student",
+								"insert"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "hafidz1",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "22",
+											"type": "text"
+										},
+										{
+											"key": "phone_number",
+											"value": "0123123123",
+											"type": "text"
+										},
+										{
+											"key": "class_id[]",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "class_id[]",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "hafidz10@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "picture",
+											"type": "file",
+											"src": "/home/ubaid/Pictures/1.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/mobile/student/insert",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"mobile",
+										"student",
+										"insert"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Nov 2023 01:47:19 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Nov 2023 01:47:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.33-14+ubuntu22.04.1+deb.sury.org+1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"data\": {\n        \"id\": 24,\n        \"username\": \"hafidz1\",\n        \"age\": 22,\n        \"phone_number\": \"0123123123\",\n        \"picture\": \"ad122b9f-6d1d-4b74-95db-a5fa15cfc580\",\n        \"class\": [\n            {\n                \"id\": 4,\n                \"name\": \"Calculus\",\n                \"major\": \"Informatics\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Calculus\",\n                \"major\": \"Electric\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "no email",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "hafidz1",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "22",
+											"type": "text"
+										},
+										{
+											"key": "phone_number",
+											"value": "0123123123",
+											"type": "text"
+										},
+										{
+											"key": "class_id[]",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "class_id[]",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "hafidz10@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "picture",
+											"type": "file",
+											"src": "/home/ubaid/Pictures/1.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/mobile/student/insert",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"mobile",
+										"student",
+										"insert"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Nov 2023 01:48:08 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Nov 2023 01:48:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.33-14+ubuntu22.04.1+deb.sury.org+1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": {\n        \"email\": [\n            \"validation.required\"\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Extract the authorization value from the response",
+							"var authorization = pm.response.json().authorization;",
+							"",
+							"// Store the authorization value in a collection variable",
+							"pm.collectionVariables.set(\"authorization\", authorization);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin5@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "root",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/user",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{authorization}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8000",
+			"type": "string"
+		},
+		{
+			"key": "authorization",
+			"value": ""
+		}
+	]
+}
